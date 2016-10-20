@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\MessageController;
 use Auth;
 
 use App\Message;
@@ -18,6 +19,10 @@ class ChatController extends Controller
         $chat->setAttribute('visitor_name',  $request->get('name'));
         $chat->setAttribute('visitor_email',  $request->get('email'));
         $chat->save();
+
+        $mc = new MessageController();
+        $mc->create($request);
+
         return view('welcome');
     }
     public function unassigned(Request $request){
@@ -56,8 +61,6 @@ class ChatController extends Controller
                 $sheet->fromArray($messages);
             });
         })->download('csv');
-
-        return view('welcome');
     }
     public function assign(Request $request, $id){
         $user = Auth::user();

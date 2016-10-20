@@ -1,0 +1,30 @@
+html, body, input, select, textarea
+{
+    font-size: 1.05em;
+}
+table {
+    font-family:Arial;
+    color:#666;
+    font-size:12px;
+    background:#eaebec;
+    margin:20px;
+    border:#ccc 1px solid;
+    border-radius:3px;
+    box-shadow: 0 1px 2px #d1d1d1;
+}
+table tr td:first-of-type{
+    width: 100px;
+}
+table tr {
+    text-align: left;
+}
+table td {
+    text-align: left;
+}
+
+.error {
+    color: #a94442;
+}
+.panel {
+    border: 1px solid #dddddd;
+}

@@ -22,7 +22,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/register', 'Auth\AuthController@postRegister');# Process registration form
 
     Route::get('/chat/{id}', 'ChatController@getChat');
-    Route::post('/chat/create/{id}', 'ChatController@create');
+    Route::post('/chat/create', 'ChatController@create');
     Route::post('/chat/{id}', 'MessageController@create');
     Route::get('/chat/transcript/{id}', 'ChatController@downloadTranscript');
 
